@@ -1,0 +1,51 @@
+<% content_for :title, "Home" %>
+
+<div class="hero-section">
+  <div class="container">
+    <h1 class="display-4"><%= @welcome_message %></h1>
+    
+    <% if logged_in? %>
+      <div class="user-dashboard">
+        <p class="lead">You're logged in as <%= current_user.full_name %></p>
+        <div class="action-buttons">
+          <%= link_to "View Profile", user_path(current_user), class: "btn btn-primary" %>
+          <%= link_to "Edit Profile", edit_user_path(current_user), class: "btn btn-outline-primary" %>
+          <%= link_to "Logout", logout_path, method: :delete, class: "btn btn-outline-secondary" %>
+        </div>
+      </div>
+    <% else %>
+      <div class="auth-section">
+        <p class="lead">Join our community and start sharing your favorite recipes!</p>
+        <div class="action-buttons">
+          <%= link_to "Sign Up", signup_path, class: "btn btn-primary" %>
+          <%= link_to "Login", login_path, class: "btn btn-outline-primary" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="features-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="feature-card">
+          <h3>Share Recipes</h3>
+          <p>Upload and share your favorite family recipes with the community.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature-card">
+          <h3>Discover New Dishes</h3>
+          <p>Explore recipes from around the world and expand your culinary horizons.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature-card">
+          <h3>Save Favorites</h3>
+          <p>Keep track of your favorite recipes and organize them into collections.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,54 @@
+<% content_for :title, "Sign Up" %>
+
+<div class="auth-container">
+  <div class="auth-card">
+    <h2 class="auth-title">Join Rails Cookbook</h2>
+    
+    <%= form_with model: @user, local: true, class: "auth-form" do |f| %>
+      <% if @user.errors.any? %>
+        <div class="alert alert-danger">
+          <h4><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h4>
+          <ul>
+            <% @user.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <%= f.label :first_name, "First Name" %>
+          <%= f.text_field :first_name, class: "form-control", placeholder: "First name", required: true %>
+        </div>
+        <div class="form-group col-md-6">
+          <%= f.label :last_name, "Last Name" %>
+          <%= f.text_field :last_name, class: "form-control", placeholder: "Last name", required: true %>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <%= f.label :email, "Email Address" %>
+        <%= f.email_field :email, class: "form-control", placeholder: "Enter your email", required: true %>
+      </div>
+      
+      <div class="form-group">
+        <%= f.label :password, "Password" %>
+        <%= f.password_field :password, class: "form-control", placeholder: "Enter your password (min. 6 characters)", required: true %>
+      </div>
+      
+      <div class="form-group">
+        <%= f.label :password_confirmation, "Confirm Password" %>
+        <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Confirm your password", required: true %>
+      </div>
+      
+      <div class="form-group">
+        <%= f.submit "Create Account", class: "btn btn-primary btn-block" %>
+      </div>
+    <% end %>
+    
+    <div class="auth-links">
+      <p>Already have an account? <%= link_to "Login here", login_path %></p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+{
+  "name": "Rails 8 Cookbook",
+  "image": "mcr.microsoft.com/devcontainers/ruby:3.3-bullseye",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "18"
+    },
+    "ghcr.io/devcontainers/features/github-cli:1": {},
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+  },
+  "postCreateCommand": "gem install rails -v 8.0.2 && bundle install && rails db:create db:migrate",
+  "forwardPorts": [3000],
+  "portsAttributes": {
+    "3000": {
+      "label": "Rails Server",
+      "onAutoForward": "notify"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "rebornix.Ruby",
+        "KoichSasada.vscode-rdbg", 
+        "shopify.ruby-lsp",
+        "ms-vscode.vscode-json",
+        "bradlc.vscode-tailwindcss",
+        "esbenp.prettier-vscode"
+      ],
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "ruby.intellisense": "rubyLsp",
+        "ruby.format": "rubyLsp"
+      }
+    }
+  },
+  "remoteUser": "vscode"
+}
