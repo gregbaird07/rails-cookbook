@@ -6,11 +6,24 @@
     
     <% if logged_in? %>
       <div class="user-dashboard">
-        <p class="lead">You're logged in as <%= current_user.full_name %></p>
+        <p class="lead">You're logged in as <%= current_user.full_name %> 👋</p>
         <div class="action-buttons">
-          <%= link_to "View Profile", user_path(current_user), class: "btn btn-primary" %>
-          <%= link_to "Edit Profile", edit_user_path(current_user), class: "btn btn-outline-primary" %>
-          <%= link_to "Logout", logout_path, method: :delete, class: "btn btn-outline-secondary" %>
+          <%= link_to user_path(current_user), class: "btn btn-primary btn-lg" do %>
+            <i class="fas fa-user me-2"></i>View Profile
+          <% end %>
+          <%= link_to edit_user_path(current_user), class: "btn btn-outline-primary btn-lg" do %>
+            <i class="fas fa-edit me-2"></i>Edit Profile
+          <% end %>
+          <%= button_to logout_path, 
+              method: :delete, 
+              class: "btn btn-outline-light btn-lg logout-hero-btn",
+              form: { style: "display: inline;" },
+              data: { 
+                confirm: "Are you sure you want to logout?",
+                turbo_method: :delete 
+              } do %>
+            <i class="fas fa-sign-out-alt me-2"></i>Logout
+          <% end %>
         </div>
       </div>
     <% else %>

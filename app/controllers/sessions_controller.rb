@@ -16,7 +16,8 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    user_name = current_user&.first_name
     session[:user_id] = nil
-    redirect_to root_path, notice: 'Successfully logged out!'
+    redirect_to root_path, notice: "Successfully logged out#{user_name ? ", #{user_name}" : ''}! See you next time! 👋"
   end
 end

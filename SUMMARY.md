@@ -3,6 +3,7 @@
 ## 🎉 What We've Built
 
 ### 🔐 Authentication System
+
 - **User Model**: Secure password handling with bcrypt
 - **Registration**: Sign up with email, first name, last name
 - **Login/Logout**: Session-based authentication
@@ -10,6 +11,7 @@
 - **Validation**: Email format, uniqueness, password strength
 
 ### 🎨 Modern UI
+
 - **Bootstrap 5**: Responsive, mobile-first design
 - **Gradient Hero**: Eye-catching landing page
 - **Navigation**: User-aware navbar with dropdown
@@ -17,12 +19,14 @@
 - **Flash Messages**: User feedback system
 
 ### 🛠️ Rails 8 Features
+
 - **Latest Rails**: Version 8.0.2 with modern defaults
 - **Importmap**: ES modules for JavaScript
 - **SQLite**: Development database
 - **Migrations**: User table with proper indexes
 
 ### 🚀 Deployment Ready
+
 - **GitHub Codespaces**: One-click cloud development
 - **Dev Container**: Consistent development environment
 - **Docker**: Container configuration included

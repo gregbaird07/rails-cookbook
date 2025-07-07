@@ -4,18 +4,21 @@
 
 1. **Push this code to GitHub** (if not already there)
 2. **Open in Codespaces:**
+
    - Go to your GitHub repository
    - Click the green "Code" button
    - Select "Codespaces" tab
    - Click "Create codespace on main"
 
 3. **Wait for setup** (automatic):
+
    - Environment will be configured
    - Rails 8 will be installed
    - Database will be created and migrated
    - Demo user will be created
 
 4. **Start the server:**
+
    ```bash
    rails server
    ```
@@ -25,24 +28,28 @@
    - Click the popup notification or check the Ports tab
 
 ## Demo Account
+
 - **Email:** demo@example.com
 - **Password:** password123
 
 ## What's Included
 
 ✅ **Authentication System:**
+
 - User registration and login
 - Secure password handling with bcrypt
 - Session management
 - Profile management
 
 ✅ **Modern UI:**
+
 - Bootstrap 5 styling
 - Responsive design
 - Flash messages
 - Navigation system
 
 ✅ **Rails 8 Features:**
+
 - Latest Rails version
 - Importmap for JavaScript
 - Modern asset pipeline
@@ -53,11 +60,13 @@
 Once your Codespace is running, you can:
 
 1. **Test the authentication:**
+
    - Visit the home page
    - Sign up for a new account
    - Login/logout functionality
 
 2. **Add new features:**
+
    - Recipe models and controllers
    - Image uploads
    - Recipe categories
